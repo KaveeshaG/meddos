@@ -13,7 +13,7 @@ import "./sidebar.scss"
 
 const Sidebar = () => {
     // const { dispatch } = useContext(DarkModeContext);
-    const [error, setError] = useState(false);
+    const [setError] = useState(false);
     const { dispatch } = useContext(AuthContext);
     const navitage = useNavigate();
 

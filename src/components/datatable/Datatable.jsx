@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const Datatable = () => {
   const [data, setData] = useState(userRows);
-  const [selectedRowId, setSelectedRowId] = useState(null);
+  const [selectedRowId] = useState(null);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -22,7 +22,6 @@ const Datatable = () => {
       headerName: "Action",
       width: 200,
       renderCell: (params) => {
-        const isSelectedRow = params.row.id === selectedRowId;
         return (
           <div className="cellAction">
             {/* {isSelectedRow ? (

@@ -6,7 +6,7 @@ import { useState } from "react";
 import { userRows } from "../../datatablesource";
 
 const Featured = () => {
-  const [data, setData] = useState(userRows);
+  const [data] = useState(userRows);
   const count = data.length;
   const bmiValues = data.map((data) => data.bmi);
   const sum = bmiValues.reduce((acc, bmi) => acc + bmi, 0);

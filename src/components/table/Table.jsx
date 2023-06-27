@@ -10,7 +10,7 @@ import { useState } from "react";
 import { userRows } from "../../datatablesource";
 
 const List = () => {
-  const [rows, setData] = useState(userRows);
+  const [rows] = useState(userRows);
     // const rows = [
     //     {
     //       id: 1143155,

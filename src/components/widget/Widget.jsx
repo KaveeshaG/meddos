@@ -7,7 +7,7 @@ import { userRows } from "../../datatablesource";
 
 const Widget = ({ type }) => {
   let data;
-  const [datas, setData] = useState(userRows);
+  const [datas] = useState(userRows);
   const count = datas.length;
 
 
