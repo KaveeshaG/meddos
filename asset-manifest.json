@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/meddos/static/css/main.5553341b.css",
+    "main.js": "/meddos/static/js/main.d97a0cfb.js",
+    "index.html": "/meddos/index.html",
+    "main.5553341b.css.map": "/meddos/static/css/main.5553341b.css.map",
+    "main.d97a0cfb.js.map": "/meddos/static/js/main.d97a0cfb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5553341b.css",
+    "static/js/main.d97a0cfb.js"
+  ]
+}
