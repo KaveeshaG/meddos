@@ -1,0 +1,322 @@
+export const userColumns = [
+  { field: "id", headerName: "SampleNo", width: 70 },
+  {
+    field: "name",
+    headerName: "Name",
+    width: 230,
+    renderCell: (params) => {
+      return (
+        <div className="cellWithImg">
+          <img className="cellImg" src={params.row.img} alt="avatar" />
+          {params.row.name}
+        </div>
+      );
+    },
+  },
+  {
+    field: "sex",
+    headerName: "Sex",
+    width: 50,
+  },
+
+  {
+    field: "age",
+    headerName: "Age",
+    width: 50,
+  },
+  {
+    field: "sampleDate",
+    headerName: "Samp.Date",
+    width: 100,
+  },
+  {
+    field: "reportDate",
+    headerName: "Repo.Date",
+    width: 100,
+  },
+  {
+    field: "ethnicity",
+    headerName: "Ethni.",
+    width: 80,
+  },
+  {
+    field: "academicYear",
+    headerName: "Aca.Year",
+    width: 60,
+  },
+  {
+    field: "faculty",
+    headerName: "Faculty",
+    width: 80,
+  },
+  {
+    field: "weight",
+    headerName: "Weight",
+    width: 70,
+  },
+  {
+    field: "height_m",
+    headerName: "Height(m)",
+    width: 70,
+  },
+  {
+    field: "height_cm",
+    headerName: "Height(cm)",
+    width: 70,
+  },
+  {
+    field: "waistCircumference",
+    headerName: "WCircum.",
+    width: 70,
+  },
+  {
+    field: "hipCircumference",
+    headerName: "HCircum.",
+    width: 70,
+  },
+  {
+    field: "midUpperArmCircumference",
+    headerName: "MUACircum.",
+    width: 70,
+  },
+  {
+    field: "midThighCircumference",
+    headerName: "MTCircum.",
+    width: 70,
+  },
+  {
+    field: "triceps",
+    headerName: "Tricep",
+    width: 70,
+  },
+  {
+    field: "subscapular",
+    headerName: "Subscap.",
+    width: 70,
+  },
+  {
+    field: "suprailiac",
+    headerName: "Supraliac.",
+    width: 70,
+  },
+  {
+    field: "midThigh",
+    headerName: "MidThigh.",
+    width: 70,
+  },
+  {
+    field: "waistThighRatio",
+    headerName: "WThiratio.",
+    width: 70,
+  },
+  {
+    field: "waistHipRatio",
+    headerName: "WHRatio.",
+    width: 70,
+  },
+  {
+    field: "weightHeightRatio",
+    headerName: "WHRatio.",
+    width: 70,
+  },
+  {
+    field: "byBioelectricalImpedanceAnalyzer",
+    headerName: "bBIA.",
+    width: 70,
+  },
+  {
+    field: "bySkinfoldThickness",
+    headerName: "bSFT.",
+    width: 70,
+  },
+  {
+    field: "visceralFatIndex",
+    headerName: "VFI.",
+    width: 70,
+  },
+  {
+    field: "bmi",
+    headerName: "BMI",
+    width: 70,
+  },
+  {
+    field: "haemoglobinConcentration",
+    headerName: "hbConc.",
+    width: 70,
+  },
+
+];
+
+export const fetchData = async () => {
+  try {
+    const response = await fetch('http://localhost:8080/api/v1/students');
+    const data = await response.json();
+    const transformedData = data.map((item) => ({
+      id: item.sampleNumber,
+      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      name: item.name,
+      age: item.age,
+      sex: item.sex,
+      sampleDate: item.sampleDate,
+      reportDate: item.reportDate,
+      ethnicity: item.ethnicity,
+      academicYear: item.academicYear,
+      faculty: item.faculty,
+      weight: item.weight,
+      height_m: item.height_m,
+      height_cm: item.height_cm,
+      waistCircumference: item.waistCircumference,
+      hipCircumference: item.hipCircumference,
+      midUpperArmCircumference: item.midUpperArmCircumference,
+      midThighCircumference: item.midThighCircumference,
+      triceps: item.triceps,
+      subscapular: item.subscapular,
+      suprailiac: item.suprailiac,
+      midThigh: item.midThigh,
+      bmi: item.bmi,
+      waistThighRatio: item.waistThighRatio,
+      waistHipRatio: item.waistHipRatio,
+      weightHeightRatio: item.weightHeightRatio,
+      byBioelectricalImpedanceAnalyzer: item.byBioelectricalImpedanceAnalyzer,
+      bySkinfoldThickness: item.bySkinfoldThickness,
+      visceralFatIndex: item.visceralFatIndex,
+      haemoglobinConcentration: item.haemoglobinConcentration,
+    }));
+    return transformedData;
+  } catch (error) {
+    console.error(error);
+    return []; // Return an empty array in case of an error
+  }
+};
+
+// Update userRows using fetchData
+export const userRows = await fetchData();
+
+
+//temporary data
+// export const userRows = [
+//   {
+//     id: 1,
+//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+//     name: "Wathsala",
+//     age: 26,
+//     sex: "Female",
+//     sampleDate: 20062023,
+//     reportDate: 20062023,
+//     ethnicity: "Sinhala",
+//     academicYear: 3,
+//     faculty: "AHS",
+//     weight: 58.7,
+//     height_m: 1.6,
+//     height_cm: 160,
+//     waistCircumference: 84,
+//     hipCircumference: 95,
+//     midUpperArmCircumference: 26,
+//     midThighCircumference: 49,
+//     triceps: 23,
+//     subscapular: 20,
+//     suprailiac: 22,
+//     midThigh: 26,
+//     bmi: 22.9296875,
+//     waistThighRatio: 1.714285714,
+//     waistHipRatio: 0.8842105263,
+//     weightHeightRatio: 36.6875,
+//     byBioelectricalImpedanceAnalyzer: 31.2,
+//     bySkinfoldThickness: 31.24303231,
+//     visceralFatIndex: 5,
+//     haemoglobinConcentration: 9.2,
+//   },
+//   {
+//     sampleNumber: 2,
+//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+//     name: "Bakani",
+//     age: 26,
+//     sex: "Female",
+//     sampleDate: 20062023,
+//     reportDate: 20062023,
+//     ethnicity: "Sinhala",
+//     academicYear: 3,
+//     faculty: "AHS",
+//     weight: 58.7,
+//     height_m: 1.6,
+//     height_cm: 160,
+//     waistCircumference: 84,
+//     hipCircumference: 95,
+//     midUpperArmCircumference: 26,
+//     midThighCircumference: 49,
+//     triceps: 23,
+//     subscapular: 20,
+//     suprailiac: 22,
+//     midThigh: 26,
+//     bmi: 22.9296875,
+//     waistThighRatio: 1.714285714,
+//     waistHipRatio: 0.8842105263,
+//     weightHeightRatio: 36.6875,
+//     byBioelectricalImpedanceAnalyzer: 31.2,
+//     bySkinfoldThickness: 31.24303231,
+//     visceralFatIndex: 5,
+//     haemoglobinConcentration: 9.2,
+//   },
+//   {
+//     id: 3,
+//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+//     name: "Pukini",
+//     age: 26,
+//     sex: "Female",
+//     sampleDate: 20062023,
+//     reportDate: 20062023,
+//     ethnicity: "Sinhala",
+//     academicYear: 3,
+//     faculty: "AHS",
+//     weight: 58.7,
+//     height_m: 1.6,
+//     height_cm: 160,
+//     waistCircumference: 84,
+//     hipCircumference: 95,
+//     midUpperArmCircumference: 26,
+//     midThighCircumference: 49,
+//     triceps: 23,
+//     subscapular: 20,
+//     suprailiac: 22,
+//     midThigh: 26,
+//     bmi: 22.9296875,
+//     waistThighRatio: 1.714285714,
+//     waistHipRatio: 0.8842105263,
+//     weightHeightRatio: 36.6875,
+//     byBioelectricalImpedanceAnalyzer: 31.2,
+//     bySkinfoldThickness: 31.24303231,
+//     visceralFatIndex: 5,
+//     haemoglobinConcentration: 9.2,
+//   },
+//   {
+//     id: 4,
+//     img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+//     name: "Hashini",
+//     age: 26,
+//     sex: "Female",
+//     sampleDate: 20062023,
+//     reportDate: 20062023,
+//     ethnicity: "Sinhala",
+//     academicYear: 3,
+//     faculty: "AHS",
+//     weight: 58.7,
+//     height_m: 1.6,
+//     height_cm: 160,
+//     waistCircumference: 84,
+//     hipCircumference: 95,
+//     midUpperArmCircumference: 26,
+//     midThighCircumference: 49,
+//     triceps: 23,
+//     subscapular: 20,
+//     suprailiac: 22,
+//     midThigh: 26,
+//     bmi: 22.9296875,
+//     waistThighRatio: 1.714285714,
+//     waistHipRatio: 0.8842105263,
+//     weightHeightRatio: 36.6875,
+//     byBioelectricalImpedanceAnalyzer: 31.2,
+//     bySkinfoldThickness: 31.24303231,
+//     visceralFatIndex: 5,
+//     haemoglobinConcentration: 9.2,
+//   },
+// ];
