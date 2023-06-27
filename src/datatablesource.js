@@ -149,7 +149,7 @@ export const userColumns = [
 
 export const fetchData = async () => {
   try {
-    const response = await fetch('http://localhost:8080/api/v1/students');
+    const response = await fetch('https://meddos-api.onrender.com/api/v1/students');
     const data = await response.json();
     const transformedData = data.map((item) => ({
       id: item.sampleNumber,
