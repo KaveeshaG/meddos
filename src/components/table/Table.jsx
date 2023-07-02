@@ -70,10 +70,11 @@ const List = () => {
           <TableRow>
             <TableCell className="tableCell">Sample No.</TableCell>
             <TableCell className="tableCell">Name</TableCell>
-            <TableCell className="tableCell">Faculty</TableCell>
             <TableCell className="tableCell">Age</TableCell>
-            <TableCell className="tableCell">Academic Year</TableCell>
-            <TableCell className="tableCell">Ethnicity</TableCell>
+            <TableCell className="tableCell">Phone No.</TableCell>
+            <TableCell className="tableCell">Sample Date</TableCell>
+            <TableCell className="tableCell">Report Date</TableCell>
+            <TableCell className="tableCell">hb Value</TableCell>
             <TableCell className="tableCell">BMI</TableCell>
           </TableRow>
         </TableHead>
@@ -87,13 +88,12 @@ const List = () => {
                   {row.name}
                 </div>
               </TableCell>
-              <TableCell className="tableCell">{row.faculty}</TableCell>
               <TableCell className="tableCell">{row.age}</TableCell>
-              <TableCell className="tableCell">{row.academicYear}</TableCell>
-              <TableCell className="tableCell">{row.ethnicity}</TableCell>
-              <TableCell className="tableCell">
-                <span className={`status ${row.bmi}`}>{row.status}</span>
-              </TableCell>
+              <TableCell className="tableCell">{row.phoneNo}</TableCell>
+              <TableCell className="tableCell">{row.sampleCollectionDate}</TableCell>
+              <TableCell className="tableCell">{row.sampleProcessedDate}</TableCell>
+              <TableCell className="tableCell">{row.hbValue}</TableCell>
+              <TableCell className="tableCell">{row.bmi}</TableCell>
             </TableRow>
           ))}
         </TableBody>

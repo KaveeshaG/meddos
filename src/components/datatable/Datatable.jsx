@@ -76,7 +76,7 @@ const Datatable = () => {
             Add New
           </Link> */}
       </div>
-      <Box sx={{ height: 600, width: '100%' }}>
+      <Box sx={{ height: 800, width: '100%' }}>
         <DataGrid
           className="datagrid"
           rows={data}
@@ -84,12 +84,12 @@ const Datatable = () => {
           initialState={{
             pagination: {
               paginationModel: {
-                pageSize: 10,
+                pageSize: 20,
               },
             },
           }}
-          pageSizeOptions={[10]}
-          rowsPerPageOptions={[10]}
+          pageSizeOptions={[20]}
+          rowsPerPageOptions={[20]}
           checkboxSelection
         />
       </Box>

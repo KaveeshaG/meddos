@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   sign: {
+    fontSize: 10,
     marginTop: 60,
   },
   note: {
@@ -192,10 +193,10 @@ const PdfFile = () => {
               Reference no : 0{student.id}
             </Text>
             <Text style={styles.text}>
-              Sample date : N/A
+              Sample date : {student.sampleCollectionDate}
             </Text>
             <Text style={styles.text}>
-              Report date : N/A
+              Report date : {student.sampleProcessedDate}
             </Text>
             <Text style={styles.text}>
               Patient name : {student.name}
@@ -204,7 +205,7 @@ const PdfFile = () => {
               Age : {student.age}
             </Text>
             <Text style={styles.text}>
-              Sex : {student.sex}
+              Sex : Female
             </Text>
             <View style={styles.table}>
               <View style={styles.tableRow}>
@@ -228,12 +229,12 @@ const PdfFile = () => {
                   <Text style={styles.tableCellVal}>Haemoglobin</Text>
                 </View>
                 <View style={styles.tableColVal}>
-                  <Text style={styles.tableCellValH}>{student.haemoglobinConcentration} g/dl</Text>
+                  <Text style={styles.tableCellValH}>{student.hbValue.toFixed(2)} g/dl</Text>
                 </View>
                 <View style={styles.tableColVal}>
-                  <Text style={styles.tableCellVal3}> {student.haemoglobinConcentration < 12 ? "L" :
-                    student.haemoglobinConcentration >= 12 && student.haemoglobinConcentration <= 15.5 ? ' ' :
-                      student.haemoglobinConcentration > 15.5 ? "H" : " "
+                  <Text style={styles.tableCellVal3}> {student.hbValue < 12 ? "L" :
+                    student.hbValue >= 12 && student.hbValue <= 15.5 ? ' ' :
+                      student.hbValue > 15.5 ? "H" : " "
                   } </Text>
                 </View>
                 <View style={styles.tableColVal}>
@@ -272,7 +273,7 @@ const PdfFile = () => {
             <Text style={styles.comVal}>Overweight &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; 25 -29.9 Kg/m<sup>2</sup></Text>
             <Text style={styles.comVal}>Obesity &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; &lt; 30 Kg/m<sup>2</sup></Text>
 
-            <Text style={styles.sign}>.........................................</Text>
+            <Text style={styles.sign}>................................................</Text>
             <Text style={styles.text}>Prof. P.P.R. Perera (MBBS, PhD),</Text>
             <Text style={styles.text}>Department of Biochemistry,</Text>
             <Text style={styles.text}>Faculty of Medical Sciences,</Text>
