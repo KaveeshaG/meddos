@@ -43,6 +43,10 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     fontFamily: 'Times-Roman',
   },
+  superText: {
+    fontSize: 8,
+    verticalAlign: 'super',
+  },
   comment: {
     marginVertical: 12,
     fontSize: 10,
@@ -248,16 +252,14 @@ const PdfFile = () => {
                   <Text style={styles.tableCellVal}>BMI</Text>
                 </View>
                 <View style={styles.tableColVal}>
-                  <Text style={styles.tableCellVal}>{student.bmi.toFixed(2)} Kg/m<sup>2</sup></Text>
+                  <Text style={styles.tableCellVal}>{student.bmi.toFixed(2)} Kg/m<Text style={styles.superText}>2</Text></Text>
                 </View>
                 <View style={styles.tableColVal}>
                   <Text style={styles.tableCellVal2}>
                     {
                       student.bmi < 18.5 ? "U/W" :
-                        student.bmi >= 18.5 && student.bmi <= 22.9 ? 'N/W' :
-                          student.bmi >= 23 && student.bmi <= 24.9 ? "R/O" :
-                            student.bmi >= 25 && student.bmi <= 29.9 ? "O/W" :
-                              student.bmi >= 30 ? "OBESE" : "N/W"}
+                        student.bmi >= 25 && student.bmi <= 29.9 ? "O/W" :
+                          student.bmi >= 30 ? "OBESE" : ""}
                   </Text>
                 </View>
                 <View style={styles.tableColVal}>
@@ -267,11 +269,11 @@ const PdfFile = () => {
             </View>
             <Text style={styles.comment}>Comment:-</Text>
             <Text style={styles.bmi}>BMI</Text>
-            <Text style={styles.comVal}>Underweight &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &lt; 18.5 Kg/m<sup>2</sup></Text>
-            <Text style={styles.comVal}>Normal weight &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 18.5 - 22.9 Kg/m<sup>2</sup></Text>
-            <Text style={styles.comVal}>Risk to overweight &emsp; &emsp; &emsp; 23 - 24.9 Kg/m<sup>2</sup></Text>
-            <Text style={styles.comVal}>Overweight &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; 25 -29.9 Kg/m<sup>2</sup></Text>
-            <Text style={styles.comVal}>Obesity &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; &lt; 30 Kg/m<sup>2</sup></Text>
+            <Text style={styles.comVal}>Underweight &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &lt; 18.5 Kg/m       <Text style={styles.superText}>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2</Text></Text>
+            <Text style={styles.comVal}>Normal weight &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 18.5 - 22.9 Kg/m      <Text style={styles.superText}>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2</Text></Text>
+            <Text style={styles.comVal}>Risk to overweight &emsp; &emsp; &emsp; 23 - 24.9 Kg/m   <Text style={styles.superText}>&emsp;&emsp;&emsp;&emsp;2</Text></Text>
+            <Text style={styles.comVal}>Overweight &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; 25 -29.9 Kg/m        <Text style={styles.superText}>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2</Text></Text>
+            <Text style={styles.comVal}>Obesity &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; &lt; 30 Kg/m          <Text style={styles.superText}>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2</Text></Text>
 
             <Text style={styles.sign}>................................................</Text>
             <Text style={styles.text}>Prof. P.P.R. Perera (MBBS, PhD),</Text>
