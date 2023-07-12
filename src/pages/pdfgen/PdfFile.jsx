@@ -192,7 +192,7 @@ const PdfFile = () => {
       <Document>
         <Page size="A4" style={styles.body}>
           <View style={styles.border}>
-            <Text style={styles.title} fixed>DEPARTMENT OF MEDICAL LABORATORY SCIENCE <br />FACULTY OF ALLIED HEALTH SCIENCES UNIVERSITY OF <br />SRI JAYEWARDHENEPURA</Text>
+            <Text style={styles.title} fixed>DEPARTMENT OF MEDICAL LABORATORY SCIENCE <br />FACULTY OF ALLIED HEALTH SCIENCES UNIVERSITY OF <br />SRI JAYEWARDENEPURA</Text>
             <Text style={styles.text}>
               Reference no : 0{student.id}
             </Text>
@@ -236,9 +236,9 @@ const PdfFile = () => {
                   <Text style={styles.tableCellValH}>{student.hbValue.toFixed(2)} g/dl</Text>
                 </View>
                 <View style={styles.tableColVal}>
-                  <Text style={styles.tableCellVal3}> {student.hbValue < 12 ? "L" :
+                  <Text style={styles.tableCellVal3}> {student.hbValue < 12 ? "Low" :
                     student.hbValue >= 12 && student.hbValue <= 15.5 ? ' ' :
-                      student.hbValue > 15.5 ? "H" : " "
+                      student.hbValue > 15.5 ? "High" : " "
                   } </Text>
                 </View>
                 <View style={styles.tableColVal}>
@@ -257,9 +257,9 @@ const PdfFile = () => {
                 <View style={styles.tableColVal}>
                   <Text style={styles.tableCellVal2}>
                     {
-                      student.bmi < 18.5 ? "U/W" :
-                        student.bmi >= 25 && student.bmi <= 29.9 ? "O/W" :
-                          student.bmi >= 30 ? "OBESE" : ""}
+                      student.bmi < 18.5 ? "Underweight" :
+                        student.bmi >= 25 && student.bmi <= 29.9 ? "Overweight" :
+                          student.bmi >= 30 ? "Obesity" : ""}
                   </Text>
                 </View>
                 <View style={styles.tableColVal}>
@@ -276,12 +276,12 @@ const PdfFile = () => {
             <Text style={styles.comVal}>Obesity &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; &lt; 30 Kg/m          <Text style={styles.superText}>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2</Text></Text>
 
             <Text style={styles.sign}>................................................</Text>
-            <Text style={styles.text}>Prof. P.P.R. Perera (MBBS, PhD),</Text>
+            <Text style={styles.text}>Prof. P.P.Rasika Perera (MBBS, PhD),</Text>
             <Text style={styles.text}>Department of Biochemistry,</Text>
             <Text style={styles.text}>Faculty of Medical Sciences,</Text>
             <Text style={styles.text}>University of Sri Jayewardenepura.</Text>
             <Text style={styles.text}>Contact no - 0714402928.</Text>
-            <Text style={styles.text}>For further information please contact the supervisor prof. P.P.R. Perera, Faculty of Medical <br /> Sciences, University of Sri Jayewardenepura.</Text>
+            <Text style={styles.text}>For further information please contact the supervisor Prof. P.P.Rasika Perera, Faculty of Medical <br /> Sciences, University of Sri Jayewardenepura.</Text>
             <Text style={styles.note}>*This test was performed as a part of undergraduate research project conducted in the Faculty of Allied Health Sciences, University of Sri Jayewardenepura.</Text>
           </View>
         </Page>
